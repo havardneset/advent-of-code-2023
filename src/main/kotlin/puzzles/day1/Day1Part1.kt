@@ -7,8 +7,10 @@ import file.ResourceFile
 
 class Day1Part1: Puzzle {
 
+    private var input = ResourceFile("day_1_input.txt")
+
     override fun solve(): PuzzleResult =
-        ResourceFile("day_1_input.txt").lines().map {
+        input.lines().map {
             findNumbers(it)
         }.sumOf {
             (it.first() + it.last()).toInt()

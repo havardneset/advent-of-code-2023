@@ -18,8 +18,10 @@ class Day1Part2: Puzzle {
         "eight" to "8",
         "nine" to "9")
 
+    private val input = ResourceFile("day_1_input.txt")
+
     override fun solve(): PuzzleResult =
-        ResourceFile("day_1_input.txt").lines().map {
+       input.lines().map {
             findNumbers(it)
         }.sumOf {
             (it.first() + it.last()).toInt()
@@ -39,6 +41,5 @@ class Day1Part2: Puzzle {
         }
 
     }
-
 
 }
