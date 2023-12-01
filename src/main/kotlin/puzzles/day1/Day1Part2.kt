@@ -18,17 +18,14 @@ class Day1Part2: Puzzle {
         "eight" to "8",
         "nine" to "9")
 
-    override fun solve(): PuzzleResult {
-
-        val file = ResourceFile("day_1_input.txt")
-        val result = file.lines().map {
+    override fun solve(): PuzzleResult =
+        ResourceFile("day_1_input.txt").lines().map {
             findNumbers(it)
         }.sumOf {
             (it.first() + it.last()).toInt()
+        }.let {
+            PuzzleResult(1, 2, it)
         }
-
-        return PuzzleResult(1, 2, result)
-    }
 
     private fun findNumbers(line: String): Sequence<String> {
         val regex = "(?=(\\d|${textNumbers.keys.joinToString("|")}))".toRegex()
