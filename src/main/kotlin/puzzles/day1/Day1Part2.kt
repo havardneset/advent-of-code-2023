@@ -25,7 +25,7 @@ class Day1Part2: Puzzle {
            .map { findNumbers(it) }
            .map { it.first() + it.last() }
            .sumOf { it.toInt() }
-           .let { PuzzleResult(1, 2, it) }
+           .let { PuzzleResult(it) }
 
     private fun findNumbers(line: String): Sequence<String> {
         val regex = "(?=(\\d|${textNumbers.keys.joinToString("|")}))".toRegex()

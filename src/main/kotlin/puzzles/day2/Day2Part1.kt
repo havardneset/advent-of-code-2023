@@ -16,7 +16,7 @@ class Day2Part1: Puzzle {
             .map { Game.parse(it) }
             .filter { it.solvable(maxRed, maxGreen, maxBlue) }
             .sumOf { it.id }
-            .let { PuzzleResult(2, 1, it) }
+            .let { PuzzleResult(it) }
 
 }
 

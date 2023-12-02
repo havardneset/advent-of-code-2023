@@ -13,6 +13,6 @@ class Day2Part2: Puzzle {
             .map { Game.parse(it) }
             .map { it.reds * it.greens * it.blues }
             .sumOf { it }
-            .let { PuzzleResult(2, 2, it) }
+            .let { PuzzleResult(it) }
 
 }

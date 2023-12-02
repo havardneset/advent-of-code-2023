@@ -14,7 +14,7 @@ class Day1Part1: Puzzle {
             .map { findNumbers(it) }
             .map { it.first() + it.last() }
             .sumOf { it.toInt() }
-            .let { PuzzleResult(1, 1, it) }
+            .let { PuzzleResult(it) }
 
     private fun findNumbers(line: String): Sequence<String> {
         val regex = "\\d".toRegex()
