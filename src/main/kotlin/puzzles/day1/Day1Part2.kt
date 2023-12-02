@@ -21,13 +21,11 @@ class Day1Part2: Puzzle {
     private val input = ResourceFile("day_1_input.txt")
 
     override fun solve(): PuzzleResult =
-       input.lines().map {
-            findNumbers(it)
-        }.sumOf {
-            (it.first() + it.last()).toInt()
-        }.let {
-            PuzzleResult(1, 2, it)
-        }
+       input.lines()
+           .map { findNumbers(it) }
+           .map { it.first() + it.last() }
+           .sumOf { it.toInt() }
+           .let { PuzzleResult(1, 2, it) }
 
     private fun findNumbers(line: String): Sequence<String> {
         val regex = "(?=(\\d|${textNumbers.keys.joinToString("|")}))".toRegex()
@@ -36,9 +34,7 @@ class Day1Part2: Puzzle {
             match.groupValues.filter { it.isNotEmpty() }
         }
         .flatten()
-        .map {
-            textNumbers[it] ?: it
-        }
+        .map { textNumbers[it] ?: it }
 
     }
 
