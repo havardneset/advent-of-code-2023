@@ -10,7 +10,7 @@ data class Game(val id: Int, val reds: Int, val greens: Int, val blues: Int) {
 
             val gameAndRounds = line.split(": ")
             val id = gameAndRounds.first().replace("Game ", "").toInt()
-            val gems = mutableMapOf(
+            val cubes = mutableMapOf(
                 "red" to 0,
                 "green" to 0,
                 "blue" to 0
@@ -21,13 +21,13 @@ data class Game(val id: Int, val reds: Int, val greens: Int, val blues: Int) {
                 round.split(", ").forEach { set ->
                     val n = set.split(" ").first().toInt()
                     val type = set.split(" ").last()
-                    if (n > gems[type]!!) {
-                        gems[type] = n;
+                    if (n > cubes[type]!!) {
+                        cubes[type] = n
                     }
                 }
             }
 
-            return Game(id, gems["red"]!!, gems["green"]!!, gems["blue"]!!)
+            return Game(id, cubes["red"]!!, cubes["green"]!!, cubes["blue"]!!)
         }
     }
 
