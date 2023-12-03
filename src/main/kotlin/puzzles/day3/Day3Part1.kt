@@ -7,7 +7,6 @@ import file.ResourceFile
 class Day3Part1: Puzzle {
 
     private val input = ResourceFile("day_3_input.txt")
-    private val emptyEnginePart = EnginePart(listOf(), listOf())
 
     override fun solve(): PuzzleResult {
 
@@ -19,9 +18,9 @@ class Day3Part1: Puzzle {
         return engineParts.keys
             .map { key ->
                 findValidNumbers(
-                    engineParts.getOrElse(key) { emptyEnginePart },
-                    engineParts.getOrElse(key - 1) { emptyEnginePart },
-                    engineParts.getOrElse(key + 1) { emptyEnginePart }
+                    engineParts.getOrElse(key) { EnginePart.EMPTY },
+                    engineParts.getOrElse(key - 1) { EnginePart.EMPTY },
+                    engineParts.getOrElse(key + 1) { EnginePart.EMPTY }
                 )
             }
             .flatten()
