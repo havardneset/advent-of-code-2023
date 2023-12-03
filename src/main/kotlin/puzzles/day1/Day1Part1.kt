@@ -8,6 +8,7 @@ import file.ResourceFile
 class Day1Part1: Puzzle {
 
     private var input = ResourceFile("day_1_input.txt")
+    private val regex = "\\d".toRegex()
 
     override fun solve(): PuzzleResult =
         input.lines()
@@ -16,9 +17,7 @@ class Day1Part1: Puzzle {
             .sumOf { it.toInt() }
             .let { PuzzleResult(it) }
 
-    private fun findNumbers(line: String): Sequence<String> {
-        val regex = "\\d".toRegex()
-        return regex.findAll(line).map { it.value }
-    }
+    private fun findNumbers(line: String): Sequence<String> =
+        regex.findAll(line).map { it.value }
 
 }

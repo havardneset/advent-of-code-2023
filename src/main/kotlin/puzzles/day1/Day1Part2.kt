@@ -4,7 +4,6 @@ import PuzzleResult
 import Puzzle
 import file.ResourceFile
 
-
 class Day1Part2: Puzzle {
 
     private val textNumbers = mapOf(
@@ -18,6 +17,8 @@ class Day1Part2: Puzzle {
         "eight" to "8",
         "nine" to "9")
 
+    private val regex = "(?=(\\d|${textNumbers.keys.joinToString("|")}))".toRegex()
+
     private val input = ResourceFile("day_1_input.txt")
 
     override fun solve(): PuzzleResult =
@@ -27,15 +28,11 @@ class Day1Part2: Puzzle {
            .sumOf { it.toInt() }
            .let { PuzzleResult(it) }
 
-    private fun findNumbers(line: String): Sequence<String> {
-        val regex = "(?=(\\d|${textNumbers.keys.joinToString("|")}))".toRegex()
-
-        return regex.findAll(line).map { match ->
+    private fun findNumbers(line: String): Sequence<String> =
+        regex.findAll(line).map { match ->
             match.groupValues.filter { it.isNotEmpty() }
         }
         .flatten()
         .map { textNumbers[it] ?: it }
-
-    }
 
 }

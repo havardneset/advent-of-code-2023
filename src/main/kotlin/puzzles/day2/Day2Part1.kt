@@ -19,4 +19,3 @@ class Day2Part1: Puzzle {
             .let { PuzzleResult(it) }
 
 }
-
