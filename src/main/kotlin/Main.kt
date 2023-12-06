@@ -6,15 +6,18 @@ import puzzles.day3.Day3Part1
 import puzzles.day3.Day3Part2
 import puzzles.day4.Day4Part1
 import puzzles.day4.Day4Part2
+import puzzles.day6.Day6Part1
+import puzzles.day6.Day6Part2
 import kotlin.time.measureTimedValue
 
 fun main() {
 
     val puzzles = listOf(
-        Day1Part1(), Day1Part2(),
-        Day2Part1(), Day2Part2(),
-        Day3Part1(), Day3Part2(),
-        Day4Part1(), Day4Part2()
+        //Day1Part1(), Day1Part2(),
+        //Day2Part1(), Day2Part2(),
+        //Day3Part1(), Day3Part2(),
+        //Day4Part1(), Day4Part2(),
+        Day6Part1(), Day6Part2()
     )
 
     puzzles.forEach { puzzle ->

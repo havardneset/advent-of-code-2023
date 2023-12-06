@@ -9,7 +9,7 @@ class Day2Part2: Puzzle {
     private val input = ResourceFile("day_2_input.txt")
 
     override fun solve(): PuzzleResult =
-        input.lines()
+        input.lines
             .map { Game.parse(it) }
             .map { it.reds * it.greens * it.blues }
             .sumOf { it }

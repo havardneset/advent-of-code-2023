@@ -10,7 +10,7 @@ class Day3Part2: Puzzle {
 
     override fun solve(): PuzzleResult {
 
-        val engineParts = input.lines()
+        val engineParts = input.lines
             .map { EnginePart.parse(it) }
             .withIndex()
             .associate { it.index to it.value }

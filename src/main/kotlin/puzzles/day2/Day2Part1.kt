@@ -12,7 +12,7 @@ class Day2Part1: Puzzle {
     private val maxBlue = 14
 
     override fun solve(): PuzzleResult =
-        input.lines()
+        input.lines
             .map { Game.parse(it) }
             .filter { it.solvable(maxRed, maxGreen, maxBlue) }
             .sumOf { it.id }

@@ -22,7 +22,7 @@ class Day1Part2: Puzzle {
     private val input = ResourceFile("day_1_input.txt")
 
     override fun solve(): PuzzleResult =
-       input.lines()
+       input.lines
            .map { findNumbers(it) }
            .map { it.first() + it.last() }
            .sumOf { it.toInt() }

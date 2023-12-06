@@ -9,7 +9,7 @@ class Day4Part2: Puzzle {
     private val input = ResourceFile("day_4_input.txt")
 
     override fun solve(): PuzzleResult {
-        val cards = input.lines()
+        val cards = input.lines
             .map { Card.parse(it) }
             .associateBy { it.id }
 
