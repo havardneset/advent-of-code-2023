@@ -8,6 +8,8 @@ import puzzles.day4.Day4Part1
 import puzzles.day4.Day4Part2
 import puzzles.day6.Day6Part1
 import puzzles.day6.Day6Part2
+import puzzles.day7.Day7Part1
+import puzzles.day7.Day7Part2
 import kotlin.time.measureTimedValue
 
 fun main() {
@@ -17,7 +19,8 @@ fun main() {
         //Day2Part1(), Day2Part2(),
         //Day3Part1(), Day3Part2(),
         //Day4Part1(), Day4Part2(),
-        Day6Part1(), Day6Part2()
+        //Day6Part1(), Day6Part2(),
+        Day7Part1(), Day7Part2()
     )
 
     puzzles.forEach { puzzle ->
