@@ -16,8 +16,7 @@ class Day8Part1: Puzzle {
             .associate {
                 val (key, directions) = it.split(" = ")
                 val (left, right) = directions
-                    .replace("(", "")
-                    .replace(")", "")
+                    .removeSurrounding("(", ")")
                     .split(", ")
 
                 key to Node(key, left, right)
